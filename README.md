@@ -1,63 +1,81 @@
-# flask-minimal
+flask-minimal
+Proyek starter Flask yang minimalis, dirancang untuk membantu kamu memulai pengembangan web dengan cepat, bersih, dan efisien. Semua kode disatukan dalam satu file utama (app.py), disertai dengan template HTML dasar dan aset statis (CSS & JS).
 
-A minimal Flask starter project designed to help you quickly set up a clean, simple, and efficient web application. This project is structured to keep things lightweight and focuses on productivity, with all your code contained in a single file (`app.py`), along with basic templates and static assets.
+🎯 Fitur
+Aplikasi Flask dalam satu file (app.py) untuk produktivitas dan kesederhanaan maksimal.
 
+Struktur HTML dasar dengan gaya dan JavaScript minimal.
 
-## Features
-- Single-file Flask application (`app.py`) to maximize productivity and simplicity.
-- Basic HTML template structure with minimal styling and JavaScript.
-- Simple and intuitive project setup with no unnecessary complexity.
-- Easily customizable for rapid development of web applications.
+Setup yang sederhana dan intuitif, tanpa kompleksitas yang tidak perlu.
 
-## Preparation
-```bash
+Mudah disesuaikan untuk pengembangan cepat.
+
+⚙️ Persiapan Sistem
+Jalankan perintah berikut di server Ubuntu-mu (misalnya EC2):
+
+bash
+Copy
+Edit
 sudo apt update
 sudo apt install python3 python3-venv python3-pip -y
-```
+📦 Instalasi Aplikasi
+Clone repositori:
 
-## Installation
+bash
+Copy
+Edit
+git clone https://github.com/nugroho-paknux/flask-minimal.git
+cd flask-minimal
+Buat virtual environment (disarankan):
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/flask-minimal.git
-   cd flask-minimal
-   ```
+bash
+Copy
+Edit
+python3 -m venv venv
+source venv/bin/activate
+Install dependensi:
 
-2. Create a virtual environment (recommended):
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Jalankan aplikasi:
 
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+bash
+Copy
+Edit
+python app.py
+Aplikasi Flask akan berjalan, dan bisa diakses melalui browser di:
 
-4. Run the app:
-   ```bash
-   python app.py
-   ```
+arduino
+Copy
+Edit
+http://localhost:5000
+Jika di-host di EC2, gunakan:
 
-The Flask app will start, and you can view it by navigating to http://localhost:5000 in your browser.
+cpp
+Copy
+Edit
+http://<PUBLIC-IP-EC2>:5000
+Pastikan port 5000 dibuka di security group EC2 kamu.
 
-## Usage
+🚀 Penggunaan
+Proyek ini sudah siap digunakan sebagai fondasi untuk membangun aplikasi web. Semua logika dan route Flask ada di dalam app.py, sehingga mudah dikembangkan. Kamu dapat menambahkan lebih banyak template, route, atau file statis sesuai kebutuhan.
 
-This starter project is ready to be used as a foundation for building web applications. The app.py file contains all the Flask routes and logic, making it simple to expand and customize. You can add more templates, routes, or static files as needed.
+🎨 Kustomisasi
+Kamu bisa mengedit:
 
-## Customization
-You can easily modify:
+Struktur HTML di: templates/index.html
 
- - The HTML structure in `templates/index.html`
- - The styling in `static/style.css`
- - The interactivity in `static/script.js`
+Gaya tampilan di: static/style.css
 
-Feel free to update the app.py file to add your routes or any additional logic to fit your needs.
+Interaktivitas di: static/script.js
 
-## License
-This project is licensed under the MIT License.
+Silakan juga ubah atau tambah route di app.py untuk menyesuaikan dengan kebutuhan aplikasimu.
 
-## Contributing
-Feel free to fork this repository and create pull requests if you have improvements or bug fixes. If you have any suggestions, open an issue, and we’ll discuss it!
+📄 Lisensi
+Proyek ini dilisensikan dengan MIT License – bebas digunakan dan dimodifikasi.
 
-This project is built with simplicity and efficiency in mind, perfect for quickly starting small web apps or prototypes with minimal overhead.
+🙌 Kontribusi
+Silakan fork repositori ini dan kirim pull request jika kamu punya perbaikan atau fitur tambahan. Jika ada saran atau masukan, buka issue, kita bisa diskusi bersama!
+
