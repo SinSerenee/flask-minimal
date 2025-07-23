@@ -207,5 +207,108 @@ sudo systemctl status \$SERVICE_NAME --no-pager
 
 echo "🎉 Flask sudah berjalan sebagai service di port 5000!"
 ```
+Tentu! Berikut bagian akhir README yang sudah **diperbarui dan dirapikan** dengan penambahan instruksi terakhir yang kamu minta:
+
+---
+
+## ✅ Setup Flask Otomatis via File dari VSCode
+
+### 1. Buat file shell script di lokal (VSCode)
+
+Buat file bernama `setup-flask-service.sh` dan isi dengan:
+
+```bash
+#!/bin/bash
+
+APP_DIR="/home/ubuntu/flask-minimal"
+SERVICE_NAME="flask-app"
+PYTHON_BIN="$APP_DIR/venv/bin/python"
+
+echo "🚀 Memulai setup Flask service..."
+
+sudo apt update && sudo apt install python3 python3-venv python3-pip -y
+
+if [ ! -d "$APP_DIR" ]; then
+  mkdir -p "$APP_DIR"
+fi
+
+cd "$APP_DIR"
+
+if [ ! -d "venv" ]; then
+  echo "🐍 Membuat virtual environment..."
+  python3 -m venv venv
+fi
+
+echo "📦 Menginstal Flask..."
+"$PYTHON_BIN" -m pip install --upgrade pip
+"$PYTHON_BIN" -m pip install flask
+
+if [ ! -f "app.py" ]; then
+  echo "📝 Membuat file app.py..."
+  cat > app.py <<EOF
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "Hello, Flask!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+EOF
+fi
+
+echo "🔧 Membuat systemd service..."
+sudo tee /etc/systemd/system/\$SERVICE_NAME.service > /dev/null <<EOF
+[Unit]
+Description=Flask Minimal App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=\$APP_DIR
+ExecStart=\$PYTHON_BIN app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo "✅ Mengaktifkan service Flask..."
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable \$SERVICE_NAME
+sudo systemctl start \$SERVICE_NAME
+
+echo "📡 Status service:"
+sudo systemctl status \$SERVICE_NAME --no-pager
+
+echo "🎉 Flask sudah berjalan sebagai service di port 5000!"
+```
+
+---
+
+### 2. Upload ke EC2 saat Launch Instance
+
+Setelah file `setup-flask-service.sh` dibuat:
+
+* Saat **membuat/menjalankan EC2 instance**, upload file shell script tersebut lewat opsi **User data (Advanced details)**.
+* Copy seluruh isi script dan paste ke kolom user data, pastikan opsi "as text" dipilih.
+
+AWS akan menjalankan script ini **secara otomatis saat instance pertama kali dijalankan**.
+
+---
+
+### 3. Tunggu Beberapa Saat & Akses Web
+
+* Setelah EC2 menyala dan setup selesai (tunggu 1–2 menit), buka browser dan akses:
+
+  ```
+  http://<PUBLIC-IP-EC2>:5000
+  ```
+
+* Jika semua langkah berhasil, halaman "Hello, Flask!" akan tampil otomatis tanpa perlu SSH manual.
+
+> ✅ Sekarang Flask berjalan otomatis saat boot — dan siap kamu pakai kapan saja!
 
 ---
