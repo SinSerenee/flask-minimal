@@ -1,4 +1,3 @@
-````markdown
 # 📦 flask-minimal
 
 Proyek starter **Flask** yang minimalis, dirancang untuk memulai pengembangan web dengan cepat, bersih, dan efisien. Semua kode terdapat dalam satu file utama (`app.py`), lengkap dengan template HTML dasar dan file statis (CSS & JavaScript).
@@ -21,7 +20,7 @@ Jalankan perintah berikut di server Ubuntu (misalnya EC2):
 ```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip -y
-````
+```
 
 ---
 
@@ -54,13 +53,11 @@ sudo apt install python3 python3-venv python3-pip -y
    ```
 
    Aplikasi akan berjalan di:
-
    ```
    http://localhost:5000
    ```
 
    Jika kamu menjalankan di server seperti **EC2**, akses melalui:
-
    ```
    http://<PUBLIC-IP-EC2>:5000
    ```
@@ -73,18 +70,18 @@ sudo apt install python3 python3-venv python3-pip -y
 
 Proyek ini siap digunakan sebagai fondasi membangun web app. Semua route dan logika ada dalam `app.py`. Kamu bisa menambahkan:
 
-* Template tambahan di folder `templates/`
-* File CSS atau JS di `static/`
-* Route tambahan di `app.py`
+- Template tambahan di folder `templates/`
+- File CSS atau JS di `static/`
+- Route tambahan di `app.py`
 
 ---
 
 ## 🎨 Kustomisasi
 
-* Struktur HTML → `templates/index.html`
-* Gaya tampilan (CSS) → `static/style.css`
-* Interaktivitas (JS) → `static/script.js`
-* Route dan logika aplikasi → `app.py`
+- Struktur HTML → `templates/index.html`
+- Gaya tampilan (CSS) → `static/style.css`
+- Interaktivitas (JS) → `static/script.js`
+- Route dan logika aplikasi → `app.py`
 
 ---
 
@@ -97,13 +94,3 @@ Lisensi: **MIT License**
 ## 🤝 Kontribusi
 
 Pull request sangat dipersilakan! Jika kamu punya saran atau menemukan bug, silakan buka **issue** di repositori ini.
-
-```
-
----
-
-✅ **Selesai!**  
-Silakan **copy seluruh blok di atas**, buat file `README.md` di proyekmu, lalu **paste ke sana**. Saat kamu push ke GitHub, tampilannya akan otomatis rapi dengan heading, bold, code block, dan lainnya.
-
-Kalau kamu mau nanti auto-run pakai `systemd`, deploy ke Heroku, atau tambah `Procfile`, tinggal bilang ya.
-```
