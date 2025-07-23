@@ -1,4 +1,6 @@
 
+---
+
 # 📦 flask-minimal
 
 Proyek starter **Flask** yang minimalis, dirancang untuk memulai pengembangan web dengan cepat, bersih, dan efisien. Semua kode terdapat dalam satu file utama (`app.py`), lengkap dengan template HTML dasar dan file statis (CSS & JavaScript).
@@ -7,10 +9,10 @@ Proyek starter **Flask** yang minimalis, dirancang untuk memulai pengembangan we
 
 ## 🎯 Fitur
 
-- Aplikasi Flask dalam **satu file (`app.py`)**
-- Struktur HTML dasar dengan gaya dan JavaScript minimal
-- Setup yang **sederhana** dan **intuitif**
-- Mudah disesuaikan untuk pengembangan cepat
+* Aplikasi Flask dalam **satu file (`app.py`)**
+* Struktur HTML dasar dengan gaya dan JavaScript minimal
+* Setup yang **sederhana** dan **intuitif**
+* Mudah disesuaikan untuk pengembangan cepat
 
 ---
 
@@ -21,7 +23,7 @@ Jalankan perintah berikut di server Ubuntu (misalnya EC2):
 ```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip -y
-````
+```
 
 ---
 
@@ -73,7 +75,7 @@ sudo apt install python3 python3-venv python3-pip -y
 
 Agar Flask berjalan otomatis setelah server reboot, ikuti langkah berikut:
 
-### 1. **Buat file service systemd**
+### 1. Buat file service systemd
 
 ```bash
 sudo nano /etc/systemd/system/flask-app.service
@@ -100,7 +102,7 @@ WantedBy=multi-user.target
 
 ---
 
-### 2. **Reload systemd dan aktifkan service**
+### 2. Reload systemd dan aktifkan service
 
 ```bash
 sudo systemctl daemon-reexec
@@ -111,7 +113,7 @@ sudo systemctl start flask-app
 
 ---
 
-### 3. **Cek status service**
+### 3. Cek status service
 
 ```bash
 sudo systemctl status flask-app
@@ -127,16 +129,15 @@ Di **AWS EC2**, pastikan **Security Group** mengizinkan akses ke:
 
 * **Port:** 5000
 * **Protocol:** TCP
-* **Source:** 0.0.0.0/0 (atau batasi ke IP tertentu)
+* **Source:** `0.0.0.0/0` *(atau batasi ke IP tertentu)*
+
 ---
 
-## ✅ Langkah-Langkah: Setup Flask Otomatis via File dari VSCode
+## ✅ Setup Flask Otomatis via File dari VSCode
 
-### 🧩 1. **Di VSCode (Lokal): Buat file shell script**
+### 1. Buat file shell script di lokal (VSCode)
 
-Buat file bernama `setup-flask-service.sh` di komputer kamu:
-
-**Isi file:**
+Buat file bernama `setup-flask-service.sh` dan isi dengan:
 
 ```bash
 #!/bin/bash
@@ -206,3 +207,5 @@ sudo systemctl status \$SERVICE_NAME --no-pager
 
 echo "🎉 Flask sudah berjalan sebagai service di port 5000!"
 ```
+
+---
