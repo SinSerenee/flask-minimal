@@ -1,81 +1,109 @@
-flask-minimal
-Proyek starter Flask yang minimalis, dirancang untuk membantu kamu memulai pengembangan web dengan cepat, bersih, dan efisien. Semua kode disatukan dalam satu file utama (app.py), disertai dengan template HTML dasar dan aset statis (CSS & JS).
+````markdown
+# 📦 flask-minimal
 
-🎯 Fitur
-Aplikasi Flask dalam satu file (app.py) untuk produktivitas dan kesederhanaan maksimal.
+Proyek starter **Flask** yang minimalis, dirancang untuk memulai pengembangan web dengan cepat, bersih, dan efisien. Semua kode terdapat dalam satu file utama (`app.py`), lengkap dengan template HTML dasar dan file statis (CSS & JavaScript).
 
-Struktur HTML dasar dengan gaya dan JavaScript minimal.
+---
 
-Setup yang sederhana dan intuitif, tanpa kompleksitas yang tidak perlu.
+## 🎯 Fitur
 
-Mudah disesuaikan untuk pengembangan cepat.
+- Aplikasi Flask dalam **satu file (`app.py`)**
+- Struktur HTML dasar dengan gaya dan JavaScript minimal
+- Setup yang **sederhana** dan **intuitif**
+- Mudah disesuaikan untuk pengembangan cepat
 
-⚙️ Persiapan Sistem
-Jalankan perintah berikut di server Ubuntu-mu (misalnya EC2):
+---
 
-bash
-Copy
-Edit
+## ⚙️ Persiapan Sistem
+
+Jalankan perintah berikut di server Ubuntu (misalnya EC2):
+
+```bash
 sudo apt update
 sudo apt install python3 python3-venv python3-pip -y
-📦 Instalasi Aplikasi
-Clone repositori:
+````
 
-bash
-Copy
-Edit
-git clone https://github.com/nugroho-paknux/flask-minimal.git
-cd flask-minimal
-Buat virtual environment (disarankan):
+---
 
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate
-Install dependensi:
+## 🚀 Instalasi
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Jalankan aplikasi:
+1. **Clone repositori:**
 
-bash
-Copy
-Edit
-python app.py
-Aplikasi Flask akan berjalan, dan bisa diakses melalui browser di:
+   ```bash
+   git clone https://github.com/nugroho-paknux/flask-minimal.git
+   cd flask-minimal
+   ```
 
-arduino
-Copy
-Edit
-http://localhost:5000
-Jika di-host di EC2, gunakan:
+2. **Buat virtual environment (opsional tapi disarankan):**
 
-cpp
-Copy
-Edit
-http://<PUBLIC-IP-EC2>:5000
-Pastikan port 5000 dibuka di security group EC2 kamu.
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-🚀 Penggunaan
-Proyek ini sudah siap digunakan sebagai fondasi untuk membangun aplikasi web. Semua logika dan route Flask ada di dalam app.py, sehingga mudah dikembangkan. Kamu dapat menambahkan lebih banyak template, route, atau file statis sesuai kebutuhan.
+3. **Instal dependensi:**
 
-🎨 Kustomisasi
-Kamu bisa mengedit:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Struktur HTML di: templates/index.html
+4. **Jalankan aplikasi:**
 
-Gaya tampilan di: static/style.css
+   ```bash
+   python app.py
+   ```
 
-Interaktivitas di: static/script.js
+   Aplikasi akan berjalan di:
 
-Silakan juga ubah atau tambah route di app.py untuk menyesuaikan dengan kebutuhan aplikasimu.
+   ```
+   http://localhost:5000
+   ```
 
-📄 Lisensi
-Proyek ini dilisensikan dengan MIT License – bebas digunakan dan dimodifikasi.
+   Jika kamu menjalankan di server seperti **EC2**, akses melalui:
 
-🙌 Kontribusi
-Silakan fork repositori ini dan kirim pull request jika kamu punya perbaikan atau fitur tambahan. Jika ada saran atau masukan, buka issue, kita bisa diskusi bersama!
+   ```
+   http://<PUBLIC-IP-EC2>:5000
+   ```
 
+   > ⚠️ Pastikan **port 5000** sudah dibuka di **Security Group AWS EC2** agar bisa diakses dari luar.
+
+---
+
+## 🧪 Penggunaan
+
+Proyek ini siap digunakan sebagai fondasi membangun web app. Semua route dan logika ada dalam `app.py`. Kamu bisa menambahkan:
+
+* Template tambahan di folder `templates/`
+* File CSS atau JS di `static/`
+* Route tambahan di `app.py`
+
+---
+
+## 🎨 Kustomisasi
+
+* Struktur HTML → `templates/index.html`
+* Gaya tampilan (CSS) → `static/style.css`
+* Interaktivitas (JS) → `static/script.js`
+* Route dan logika aplikasi → `app.py`
+
+---
+
+## 📄 Lisensi
+
+Lisensi: **MIT License**
+
+---
+
+## 🤝 Kontribusi
+
+Pull request sangat dipersilakan! Jika kamu punya saran atau menemukan bug, silakan buka **issue** di repositori ini.
+
+```
+
+---
+
+✅ **Selesai!**  
+Silakan **copy seluruh blok di atas**, buat file `README.md` di proyekmu, lalu **paste ke sana**. Saat kamu push ke GitHub, tampilannya akan otomatis rapi dengan heading, bold, code block, dan lainnya.
+
+Kalau kamu mau nanti auto-run pakai `systemd`, deploy ke Heroku, atau tambah `Procfile`, tinggal bilang ya.
+```
